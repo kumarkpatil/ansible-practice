@@ -1,0 +1,10 @@
+worker_ubuntu ansible_host=3.16.215.184
+worker_amazon ansible_host=18.225.10.66
+worker_ubuntu ansible_user=ubuntu
+worker_amazon ansible_user=ec2-user
+
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
+ansible_ssh_private_key_file=/home/ubuntu/keys/terra-automate-key  # this is common for all the server
+ansible_host_key_checking=false    # to skip the verification which we need to pass yes while SSH
