@@ -1,0 +1,10 @@
+- name: Show date
+  hosts: servers
+
+  tasks:
+    - name: get date
+      command: date
+
+    - name: print uptime
+      command: uptime
+
