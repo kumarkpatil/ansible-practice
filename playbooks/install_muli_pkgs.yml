@@ -1,0 +1,17 @@
+- name: install multiple packages
+  hosts: worker-ubuntu
+  become: yes
+
+  vars:
+    package_to_install:
+      - tree
+      - unzip
+      - apache2
+      - tree
+
+  tasks:
+    - name: install
+      apt:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ package_to_install }}"
