@@ -25,6 +25,27 @@ As we can see config file is null, so we need to create cfg file manually
 
 We need to create hosts file which will contains all the info like server public ip, user name etc.
 
+We can check the hosts configuration working or not by below command 
+
+```
+ansible -i <path/hosts> group/worker -m ping
+```
+
+<img width="617" height="182" alt="image" src="https://github.com/user-attachments/assets/f34a9207-4621-4a3d-ba19-6b065c86e576" />
+
+We can also run command to all the workers by using below command
+
+```
+ansible -i hosts servers -a "sudo apt update"
+```
+
+Here, we can pass single command at time which is not fesible, so we can create **PlayBooks**
+
+Simply create file with task like install_docker.yml  # refer yml file
+in which we can add multiple command
+
+
+
 
 
 
