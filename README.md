@@ -44,6 +44,43 @@ Here, we can pass single command at time which is not fesible, so we can create 
 Simply create file with task like install_docker.yml  # refer yml file
 in which we can add multiple command
 
+## Ansible vault
+
+We can use ansible-vault to encryt/decrypt secret.
+We need to create file for ex vault_pass.txt which has the key "topSecret".
+this topSecret will used as key to encrpy the secret, it means to decrypt the secret also we need to use the same key.
+
+Change the permission of the file.
+
+```
+chmod 600 vault_pass.txt
+```
+
+now lets encrypt
+
+```
+ansible-vault encrypt secret.yml --vault-password-file vault_pass.txt
+```
+
+Now if we run the playbook in which we are printing secret, it will not run because it will fail while decrypting the secret.
+
+If we want to run secret playbook
+
+```
+ansible-playbook -i hosts.ini show_secret.yml --vault-password-file vault_pass.txt
+```
+
+
+
+
+
+
+Notes:
+
+no_log : will not print the debug log
+-i     : inventory
+-m     : modules
+-a     : addhoc command
 
 
 
