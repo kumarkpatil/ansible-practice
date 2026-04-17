@@ -1,0 +1,19 @@
+- name: install docker
+  hosts: servers
+  become: yes
+
+  tasks:
+    - name: upgrade all depds
+      apt:
+        name: "*"
+        state: latest
+      when: ansible_os_family == "Debain"  # We can check the condition before running command
+
+    - name: update packages
+      apt:
+        update_cache: yes    
+
+    - name: install docker
+      apt:
+        name: "docker.io"
+        state: latest
