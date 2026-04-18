@@ -71,15 +71,27 @@ ansible-playbook -i hosts.ini show_secret.yml --vault-password-file vault_pass.t
 ```
 
 
+## Roles
+
+> Ansible Galaxy : to create roles
+
+> Roles : Reusable template for playbooks
+
+ansible-galaxy init role/docker
 
 
 
 
-Notes:
+
+
+### Notes:
 
 no_log : will not print the debug log
+
 -i     : inventory
+
 -m     : modules
+
 -a     : addhoc command
 
 
