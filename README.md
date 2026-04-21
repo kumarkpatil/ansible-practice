@@ -79,6 +79,7 @@ ansible-playbook -i hosts.ini show_secret.yml --vault-password-file vault_pass.t
 
 ansible-galaxy init role/docker
 
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/9ea25aaf-9407-4a93-a661-1ec5b1aedcd9" />
 
 
 
